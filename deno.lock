@@ -1,8 +1,21 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@std/internal@^1.0.9": "1.0.9",
+    "jsr:@std/path@^1.1.1": "1.1.1",
     "npm:@mozilla/readability@0.6": "0.6.0",
     "npm:jsdom@^26.1.0": "26.1.0"
+  },
+  "jsr": {
+    "@std/internal@1.0.9": {
+      "integrity": "bdfb97f83e4db7a13e8faab26fb1958d1b80cc64366501af78a0aee151696eb8"
+    },
+    "@std/path@1.1.1": {
+      "integrity": "fe00026bd3a7e6a27f73709b83c607798be40e20c81dde655ce34052fd82ec76",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    }
   },
   "npm": {
     "@asamuzakjp/css-color@3.2.0_@csstools+css-parser-algorithms@3.0.5__@csstools+css-tokenizer@3.0.4_@csstools+css-tokenizer@3.0.4": {
@@ -221,6 +234,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@std/path@^1.1.1",
       "npm:@mozilla/readability@0.6",
       "npm:jsdom@^26.1.0"
     ]

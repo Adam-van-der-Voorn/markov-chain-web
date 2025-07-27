@@ -1,6 +1,7 @@
 {
   "imports": {
     "@mozilla/readability": "npm:@mozilla/readability@^0.6.0",
+    "@std/path": "jsr:@std/path@^1.1.1",
     "jsdom": "npm:jsdom@^26.1.0"
   }
 }

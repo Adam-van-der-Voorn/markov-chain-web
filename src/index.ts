@@ -1,7 +1,18 @@
 import { markovGet, markovPost } from "./api/markov.ts";
+import {resolve} from "@std/path"
 
-const PORT = 3000;
-const STATIC_DIR = './public';
+const USAGE_STR = "mkc-web <static-dir> [<port>]"
+
+const staticDirStr = Deno.args[0]
+if (staticDirStr === undefined) {
+    console.error(USAGE_STR)
+    Deno.exit(1)
+}
+const STATIC_DIR = resolve(staticDirStr)
+const portInput = parseInt(Deno.args[1]);
+const PORT = isNaN(portInput) ? 3000 : portInput;
+
+console.log({ PORT, STATIC_DIR })
 
 // Helper function to serve static files
 async function serveStaticFile(pathname: string): Promise<Response> {
